@@ -1,5 +1,5 @@
 {
-	"greeting": "Cosa può fare Kilo Code per te?",
+	"greeting": "Cosa può fare ZyAgent per te?",
 	"task": {
 		"title": "Attività",
 		"expand": "Espandi attività",
@@ -21,7 +21,7 @@
 		"sharePublicly": "Condividi pubblicamente",
 		"sharePubliclyDescription": "Chiunque con il link può accedere",
 		"connectToCloud": "Connetti al Cloud",
-		"connectToCloudDescription": "Accedi a Kilo Code Cloud per condividere attività",
+		"connectToCloudDescription": "Accedi a ZyAgent Cloud per condividere attività",
 		"sharingDisabledByOrganization": "Condivisione disabilitata dall'organizzazione",
 		"shareSuccessOrganization": "Link organizzazione copiato negli appunti",
 		"shareSuccessPublic": "Link pubblico copiato negli appunti",
@@ -91,7 +91,7 @@
 		"tooltip": "Annulla l'operazione corrente"
 	},
 	"scrollToBottom": "Scorri fino alla fine della chat",
-	"about": "Genera, refactor e debug del codice con l'assistenza dell'IA. Consulta la nostra <DocsLink>documentazione</DocsLink> per saperne di più.",
+	"about": "Lavora con zyagent per completare le tue attività in modo efficiente!",
 	"onboarding": "Grazie alle più recenti innovazioni nelle capacità di codifica agentica, posso gestire complesse attività di sviluppo software passo dopo passo. Con strumenti che mi permettono di creare e modificare file, esplorare progetti complessi, utilizzare il browser ed eseguire comandi da terminale (dopo la tua autorizzazione), posso aiutarti in modi che vanno oltre il completamento del codice o il supporto tecnico. Posso persino usare MCP per creare nuovi strumenti ed estendere le mie capacità.",
 	"rooTips": {
 		"boomerangTasks": {
@@ -128,7 +128,7 @@
 		"title": "Modalità",
 		"marketplace": "Marketplace delle Modalità",
 		"settings": "Impostazioni Modalità",
-		"description": "Personalità specializzate che adattano il comportamento di Kilo Code.",
+		"description": "Personalità specializzate che adattano il comportamento di ZyAgent.",
 		"searchPlaceholder": "Cerca modalità...",
 		"noResults": "Nessun risultato trovato",
 		"organizationModes": "Modalità dell'organizzazione"
@@ -140,13 +140,13 @@
 	"forNextMode": "per la prossima modalità",
 	"forPreviousMode": "per la modalità precedente",
 	"instructions": {
-		"wantsToFetch": "Kilo Code vuole recuperare istruzioni dettagliate per aiutare con l'attività corrente"
+		"wantsToFetch": "ZyAgent vuole recuperare istruzioni dettagliate per aiutare con l'attività corrente"
 	},
 	"error": "Errore",
 	"diffError": {
 		"title": "Modifica non riuscita"
 	},
-	"troubleMessage": "Kilo Code sta avendo problemi...",
+	"troubleMessage": "ZyAgent sta avendo problemi...",
 	"apiRequest": {
 		"title": "Richiesta API",
 		"failed": "Richiesta API fallita",
@@ -171,43 +171,43 @@
 		"current": "Corrente"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code vuole leggere questo file",
-		"wantsToReadOutsideWorkspace": "Kilo Code vuole leggere questo file al di fuori dell'area di lavoro",
-		"didRead": "Kilo Code ha letto questo file",
-		"wantsToEdit": "Kilo Code vuole modificare questo file",
-		"wantsToEditOutsideWorkspace": "Kilo Code vuole modificare questo file al di fuori dell'area di lavoro",
-		"wantsToEditProtected": "Kilo Code vuole modificare un file di configurazione protetto",
-		"wantsToCreate": "Kilo Code vuole creare un nuovo file",
-		"wantsToSearchReplace": "Kilo Code vuole eseguire ricerca e sostituzione in questo file",
-		"didSearchReplace": "Kilo Code ha eseguito ricerca e sostituzione in questo file",
-		"wantsToInsert": "Kilo Code vuole inserire contenuto in questo file",
-		"wantsToInsertWithLineNumber": "Kilo Code vuole inserire contenuto in questo file alla riga {{lineNumber}}",
-		"wantsToInsertAtEnd": "Kilo Code vuole aggiungere contenuto alla fine di questo file",
-		"wantsToReadAndXMore": "Kilo Code vuole leggere questo file e altri {{count}}",
-		"wantsToReadMultiple": "Kilo Code vuole leggere più file",
-		"wantsToApplyBatchChanges": "Kilo Code vuole applicare modifiche a più file",
-		"wantsToGenerateImage": "Kilo Code vuole generare un'immagine",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code vuole generare un'immagine fuori dall'area di lavoro",
-		"wantsToGenerateImageProtected": "Kilo Code vuole generare un'immagine in una posizione protetta",
-		"didGenerateImage": "Kilo Code ha generato un'immagine"
+		"wantsToRead": "ZyAgent vuole leggere questo file",
+		"wantsToReadOutsideWorkspace": "ZyAgent vuole leggere questo file al di fuori dell'area di lavoro",
+		"didRead": "ZyAgent ha letto questo file",
+		"wantsToEdit": "ZyAgent vuole modificare questo file",
+		"wantsToEditOutsideWorkspace": "ZyAgent vuole modificare questo file al di fuori dell'area di lavoro",
+		"wantsToEditProtected": "ZyAgent vuole modificare un file di configurazione protetto",
+		"wantsToCreate": "ZyAgent vuole creare un nuovo file",
+		"wantsToSearchReplace": "ZyAgent vuole eseguire ricerca e sostituzione in questo file",
+		"didSearchReplace": "ZyAgent ha eseguito ricerca e sostituzione in questo file",
+		"wantsToInsert": "ZyAgent vuole inserire contenuto in questo file",
+		"wantsToInsertWithLineNumber": "ZyAgent vuole inserire contenuto in questo file alla riga {{lineNumber}}",
+		"wantsToInsertAtEnd": "ZyAgent vuole aggiungere contenuto alla fine di questo file",
+		"wantsToReadAndXMore": "ZyAgent vuole leggere questo file e altri {{count}}",
+		"wantsToReadMultiple": "ZyAgent vuole leggere più file",
+		"wantsToApplyBatchChanges": "ZyAgent vuole applicare modifiche a più file",
+		"wantsToGenerateImage": "ZyAgent vuole generare un'immagine",
+		"wantsToGenerateImageOutsideWorkspace": "ZyAgent vuole generare un'immagine fuori dall'area di lavoro",
+		"wantsToGenerateImageProtected": "ZyAgent vuole generare un'immagine in una posizione protetta",
+		"didGenerateImage": "ZyAgent ha generato un'immagine"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code vuole visualizzare i file di primo livello in questa directory",
-		"didViewTopLevel": "Kilo Code ha visualizzato i file di primo livello in questa directory",
-		"wantsToViewRecursive": "Kilo Code vuole visualizzare ricorsivamente tutti i file in questa directory",
-		"didViewRecursive": "Kilo Code ha visualizzato ricorsivamente tutti i file in questa directory",
-		"wantsToViewDefinitions": "Kilo Code vuole visualizzare i nomi delle definizioni di codice sorgente utilizzate in questa directory",
-		"didViewDefinitions": "Kilo Code ha visualizzato i nomi delle definizioni di codice sorgente utilizzate in questa directory",
-		"wantsToSearch": "Kilo Code vuole cercare in questa directory <code>{{regex}}</code>",
-		"didSearch": "Kilo Code ha cercato in questa directory <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Kilo Code vuole cercare in questa directory (fuori dall'area di lavoro) <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Kilo Code ha cercato in questa directory (fuori dall'area di lavoro) <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code vuole visualizzare i file di primo livello in questa directory (fuori dall'area di lavoro)",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code ha visualizzato i file di primo livello in questa directory (fuori dall'area di lavoro)",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code vuole visualizzare ricorsivamente tutti i file in questa directory (fuori dall'area di lavoro)",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code ha visualizzato ricorsivamente tutti i file in questa directory (fuori dall'area di lavoro)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code vuole visualizzare i nomi delle definizioni di codice sorgente utilizzate in questa directory (fuori dall'area di lavoro)",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code ha visualizzato i nomi delle definizioni di codice sorgente utilizzate in questa directory (fuori dall'area di lavoro)"
+		"wantsToViewTopLevel": "ZyAgent vuole visualizzare i file di primo livello in questa directory",
+		"didViewTopLevel": "ZyAgent ha visualizzato i file di primo livello in questa directory",
+		"wantsToViewRecursive": "ZyAgent vuole visualizzare ricorsivamente tutti i file in questa directory",
+		"didViewRecursive": "ZyAgent ha visualizzato ricorsivamente tutti i file in questa directory",
+		"wantsToViewDefinitions": "ZyAgent vuole visualizzare i nomi delle definizioni di codice sorgente utilizzate in questa directory",
+		"didViewDefinitions": "ZyAgent ha visualizzato i nomi delle definizioni di codice sorgente utilizzate in questa directory",
+		"wantsToSearch": "ZyAgent vuole cercare in questa directory <code>{{regex}}</code>",
+		"didSearch": "ZyAgent ha cercato in questa directory <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "ZyAgent vuole cercare in questa directory (fuori dall'area di lavoro) <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "ZyAgent ha cercato in questa directory (fuori dall'area di lavoro) <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "ZyAgent vuole visualizzare i file di primo livello in questa directory (fuori dall'area di lavoro)",
+		"didViewTopLevelOutsideWorkspace": "ZyAgent ha visualizzato i file di primo livello in questa directory (fuori dall'area di lavoro)",
+		"wantsToViewRecursiveOutsideWorkspace": "ZyAgent vuole visualizzare ricorsivamente tutti i file in questa directory (fuori dall'area di lavoro)",
+		"didViewRecursiveOutsideWorkspace": "ZyAgent ha visualizzato ricorsivamente tutti i file in questa directory (fuori dall'area di lavoro)",
+		"wantsToViewDefinitionsOutsideWorkspace": "ZyAgent vuole visualizzare i nomi delle definizioni di codice sorgente utilizzate in questa directory (fuori dall'area di lavoro)",
+		"didViewDefinitionsOutsideWorkspace": "ZyAgent ha visualizzato i nomi delle definizioni di codice sorgente utilizzate in questa directory (fuori dall'area di lavoro)"
 	},
 	"commandOutput": "Output del Comando",
 	"commandExecution": {
@@ -235,18 +235,18 @@
 		"youSaid": "Hai detto"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code vuole utilizzare uno strumento sul server MCP {{serverName}}",
-		"wantsToAccessResource": "Kilo Code vuole accedere a una risorsa sul server MCP {{serverName}}"
+		"wantsToUseTool": "ZyAgent vuole utilizzare uno strumento sul server MCP {{serverName}}",
+		"wantsToAccessResource": "ZyAgent vuole accedere a una risorsa sul server MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code vuole passare alla modalità <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Kilo Code vuole passare alla modalità <code>{{mode}}</code> perché: {{reason}}",
-		"didSwitch": "Kilo Code è passato alla modalità <code>{{mode}}</code>",
-		"didSwitchWithReason": "Kilo Code è passato alla modalità <code>{{mode}}</code> perché: {{reason}}"
+		"wantsToSwitch": "ZyAgent vuole passare alla modalità <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "ZyAgent vuole passare alla modalità <code>{{mode}}</code> perché: {{reason}}",
+		"didSwitch": "ZyAgent è passato alla modalità <code>{{mode}}</code>",
+		"didSwitchWithReason": "ZyAgent è passato alla modalità <code>{{mode}}</code> perché: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code vuole creare una nuova sottoattività in modalità <code>{{mode}}</code>",
-		"wantsToFinish": "Kilo Code vuole completare questa sottoattività",
+		"wantsToCreate": "ZyAgent vuole creare una nuova sottoattività in modalità <code>{{mode}}</code>",
+		"wantsToFinish": "ZyAgent vuole completare questa sottoattività",
 		"newTaskContent": "Istruzioni sottoattività",
 		"completionContent": "Sottoattività completata",
 		"resultContent": "Risultati sottoattività",
@@ -304,7 +304,7 @@
 		"socialLinks": "Unisciti a noi su <xLink>X</xLink>, <discordLink>Discord</discordLink>, o <redditLink>r/RooCode</redditLink> 🚀"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code vuole utilizzare il browser",
+		"rooWantsToUse": "ZyAgent vuole utilizzare il browser",
 		"consoleLogs": "Log della console",
 		"noNewLogs": "(Nessun nuovo log)",
 		"screenshot": "Screenshot del browser",
@@ -338,24 +338,24 @@
 	"profileViolationWarning": "Il profilo corrente non è compatibile con le impostazioni della tua organizzazione",
 	"shellIntegration": {
 		"title": "Avviso di esecuzione comando",
-		"description": "Il tuo comando viene eseguito senza l'integrazione shell del terminale VSCode. Per sopprimere questo avviso puoi disattivare l'integrazione shell nella sezione <strong>Terminal</strong> delle <settingsLink>impostazioni di Kilo Code</settingsLink> o risolvere i problemi di integrazione del terminale VSCode utilizzando il link qui sotto.",
+		"description": "Il tuo comando viene eseguito senza l'integrazione shell del terminale VSCode. Per sopprimere questo avviso puoi disattivare l'integrazione shell nella sezione <strong>Terminal</strong> delle <settingsLink>impostazioni di ZyAgent</settingsLink> o risolvere i problemi di integrazione del terminale VSCode utilizzando il link qui sotto.",
 		"troubleshooting": "Clicca qui per la documentazione sull'integrazione shell."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Limite di Richieste Auto-approvate Raggiunto",
-			"description": "Kilo Code ha raggiunto il limite auto-approvato di {{count}} richiesta/e API. Vuoi reimpostare il contatore e procedere con l'attività?",
+			"description": "ZyAgent ha raggiunto il limite auto-approvato di {{count}} richiesta/e API. Vuoi reimpostare il contatore e procedere con l'attività?",
 			"button": "Reimposta e Continua"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Limite di costo auto-approvato raggiunto",
 			"button": "Reimposta e Continua",
-			"description": "Kilo Code ha raggiunto il limite di costo approvato automaticamente di ${{count}}. Vuoi reimpostare il costo e procedere con l'attività?"
+			"description": "ZyAgent ha raggiunto il limite di costo approvato automaticamente di ${{count}}. Vuoi reimpostare il costo e procedere con l'attività?"
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code vuole cercare nella base di codice <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Kilo Code vuole cercare nella base di codice <code>{{query}}</code> in <code>{{path}}</code>",
+		"wantsToSearch": "ZyAgent vuole cercare nella base di codice <code>{{query}}</code>",
+		"wantsToSearchWithPath": "ZyAgent vuole cercare nella base di codice <code>{{query}}</code> in <code>{{path}}</code>",
 		"didSearch_one": "Trovato 1 risultato",
 		"didSearch_other": "Trovati {{count}} risultati",
 		"resultTooltip": "Punteggio di somiglianza: {{score}} (clicca per aprire il file)"
@@ -420,7 +420,7 @@
 		"clickToEdit": "Clicca per modificare il messaggio"
 	},
 	"slashCommand": {
-		"wantsToRun": "Kilo Code vuole eseguire un comando slash",
-		"didRun": "Kilo Code ha eseguito un comando slash"
+		"wantsToRun": "ZyAgent vuole eseguire un comando slash",
+		"didRun": "ZyAgent ha eseguito un comando slash"
 	}
 }

@@ -1,9 +1,9 @@
 {
-	"name": "kilo-code",
+	"name": "zyagent",
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
-	"publisher": "kilocode",
-	"version": "4.117.0",
+	"publisher": "ZyAgent",
+	"version": "0.110.0",
 	"icon": "assets/icons/logo-outline-black.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
@@ -17,13 +17,13 @@
 		"workspace"
 	],
 	"author": {
-		"name": "Kilo Code"
+		"name": "ZyAgent"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Kilo-Org/kilocode"
+		"url": "https://github.com/codemperor/zyagent.git"
 	},
-	"homepage": "https://kilocode.ai",
+	"homepage": "http://39.106.153.140:13082/",
 	"categories": [
 		"AI",
 		"Chat",
@@ -45,8 +45,8 @@
 		"sonnet",
 		"ai",
 		"llama",
-		"Kilo Code",
-		"kilocode"
+		"ZyAgent",
+		"zyagent"
 	],
 	"activationEvents": [
 		"onLanguage",
@@ -57,13 +57,13 @@
 		"walkthroughs": [
 			{
 				"id": "kiloCodeWalkthrough",
-				"title": "5 ways Kilo Code helps you code",
+				"title": "5 ways ZyAgent helps you code",
 				"description": "You now have a personal AI coding assistant.",
 				"steps": [
 					{
 						"id": "welcome",
 						"title": "Write code for you",
-						"description": "Describe what you want to build. Kilo Code will write it from scratch, generate the files, and run them for you.",
+						"description": "Describe what you want to build. ZyAgent will write it from scratch, generate the files, and run them for you.",
 						"media": {
 							"markdown": "./dist/walkthrough/step1.md"
 						}
@@ -71,7 +71,7 @@
 					{
 						"id": "getting-started",
 						"title": "Understand your codebase",
-						"description": "Need clarity on how something works? Ask Kilo Code about any part of your files and get a clear explanation.",
+						"description": "Need clarity on how something works? Ask ZyAgent about any part of your files and get a clear explanation.",
 						"media": {
 							"markdown": "./dist/walkthrough/step2.md"
 						},
@@ -82,7 +82,7 @@
 					{
 						"id": "modes",
 						"title": "Get things working again",
-						"description": "Stuck on an error? Kilo Code can find the issue, fix it, and get your code running.",
+						"description": "Stuck on an error? ZyAgent can find the issue, fix it, and get your code running.",
 						"media": {
 							"markdown": "./dist/walkthrough/step3.md"
 						}

@@ -64,7 +64,17 @@ export class ProviderSettingsManager {
 
 	private readonly defaultProviderProfiles: ProviderProfiles = {
 		currentApiConfigName: "default",
-		apiConfigs: { default: { id: this.defaultConfigId } },
+		// apiConfigs: { default: { id: this.defaultConfigId } },
+		apiConfigs: {
+			default: {
+				id: this.defaultConfigId,
+				apiProvider: "openai",
+				openAiBaseUrl: "http://39.106.153.140:13082/v1",
+				openAiApiKey: "sk-faEfRShoqWj6OvOZQ4IU4auU1ZLQfqLv3a2zVZj5ZA6zCO1B",
+				openAiModelId: "gpt-oss-120b",
+				openAiR1FormatEnabled: true,
+			},
+		},
 		modeApiConfigs: this.defaultModeApiConfigs,
 		migrations: {
 			rateLimitSecondsMigrated: true, // Mark as migrated on fresh installs
