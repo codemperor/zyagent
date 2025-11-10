@@ -16,7 +16,9 @@ const KiloCodeAuth: React.FC<KiloCodeAuthProps> = ({ onManualConfigClick, classN
 	// const { uriScheme, uiKind, kiloCodeWrapperProperties } = useExtensionState()
 
 	const { t } = useAppTranslation()
-	const { homepages } = extensionPkg as { homepages: { baseURL: string; pricing: string; doc: string } }
+	const { homepages } = extensionPkg as {
+		homepages: { baseURL?: string }
+	}
 
 	return (
 		<div className={`flex flex-col items-center ${className}`}>
@@ -28,7 +30,7 @@ const KiloCodeAuth: React.FC<KiloCodeAuthProps> = ({ onManualConfigClick, classN
 			<p className="text-center mb-5">{t("kilocode:welcome.introText3")}</p>
 
 			<div className="w-full flex flex-col gap-5">
-				<ButtonLink href={homepages.baseURL}>{t("kilocode:welcome.ctaButton")}</ButtonLink>
+				<ButtonLink href={homepages.baseURL as string}>{t("kilocode:welcome.ctaButton")}</ButtonLink>
 
 				{!!onManualConfigClick && (
 					<ButtonSecondary onClick={() => onManualConfigClick && onManualConfigClick()}>

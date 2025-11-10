@@ -20,6 +20,7 @@ import { fetchKilocodeNotifications } from "./utils/notifications.js"
 import { finishParallelMode } from "./parallel/parallel.js"
 import { isGitWorktree } from "./utils/git.js"
 import { Package } from "./constants/package.js"
+import { DEFAULT_MODE_SLUG } from "./constants/modes/defaults.js"
 
 export interface CLIOptions {
 	mode?: string
@@ -79,7 +80,7 @@ export class CLI {
 			const telemetryService = getTelemetryService()
 			await telemetryService.initialize(config, {
 				workspace: this.options.workspace || process.cwd(),
-				mode: this.options.mode || "code",
+				mode: this.options.mode || DEFAULT_MODE_SLUG,
 				ciMode: this.options.ci || false,
 			})
 			logs.debug("Telemetry service initialized", "CLI")
@@ -91,7 +92,7 @@ export class CLI {
 			// Create ExtensionService with identity
 			const serviceOptions: Parameters<typeof createExtensionService>[0] = {
 				workspace: this.options.workspace || process.cwd(),
-				mode: this.options.mode || "code",
+				mode: this.options.mode || DEFAULT_MODE_SLUG,
 			}
 
 			if (identity) {
@@ -182,7 +183,7 @@ export class CLI {
 			React.createElement(App, {
 				store: this.store,
 				options: {
-					mode: this.options.mode || "code",
+					mode: this.options.mode || DEFAULT_MODE_SLUG,
 					workspace: this.options.workspace || process.cwd(),
 					ci: this.options.ci || false,
 					json: this.options.json || false,

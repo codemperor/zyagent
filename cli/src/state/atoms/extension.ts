@@ -12,6 +12,7 @@ import type {
 	ProviderSettings,
 	McpServer,
 } from "../../types/messages.js"
+import { DEFAULT_MODE_SLUG } from "../../constants/modes/defaults.js"
 
 /**
  * Atom to hold the complete ExtensionState
@@ -60,7 +61,7 @@ export const apiConfigurationAtom = atom<ProviderSettings | null>(null)
 /**
  * Atom to hold the current mode
  */
-export const extensionModeAtom = atom<string>("code")
+export const extensionModeAtom = atom<string>(DEFAULT_MODE_SLUG)
 
 /**
  * Atom to hold custom modes
@@ -239,7 +240,7 @@ export const updateExtensionStateAtom = atom(null, (get, set, state: ExtensionSt
 		// Preserve existing routerModels if not provided in new state
 		set(routerModelsAtom, state.routerModels || currentRouterModels)
 		set(apiConfigurationAtom, state.apiConfiguration || null)
-		set(extensionModeAtom, state.mode || "code")
+		set(extensionModeAtom, state.mode || DEFAULT_MODE_SLUG)
 		set(customModesAtom, state.customModes || [])
 		set(mcpServersAtom, state.mcpServers || [])
 		set(cwdAtom, state.cwd || null)
@@ -250,7 +251,7 @@ export const updateExtensionStateAtom = atom(null, (get, set, state: ExtensionSt
 		set(taskTodosAtom, [])
 		set(routerModelsAtom, null)
 		set(apiConfigurationAtom, null)
-		set(extensionModeAtom, "code")
+		set(extensionModeAtom, DEFAULT_MODE_SLUG)
 		set(customModesAtom, [])
 		set(mcpServersAtom, [])
 		set(cwdAtom, null)
@@ -437,7 +438,7 @@ export const updatePartialExtensionStateAtom = atom(null, (get, set, partialStat
 			version: "1.0.0",
 			apiConfiguration: {},
 			chatMessages: [],
-			mode: "code",
+			mode: DEFAULT_MODE_SLUG,
 			customModes: [],
 			taskHistoryFullLength: 0,
 			taskHistoryVersion: 0,

@@ -23,11 +23,9 @@
 		"type": "git",
 		"url": "https://github.com/codemperor/zyagent.git"
 	},
-	"homepage": "http://39.106.153.140:13082",
+	"homepage": "http://39.106.153.140:13082/pricing",
 	"homepages": {
-		"baseURL": "http://39.106.153.140:13082",
-		"pricing": "http://39.106.153.140:13082/pricing",
-		"doc": "http://39.106.153.140:13082/doc",
+		"baseURL": "http://39.106.153.140:13082/login",
 		"llmApiKey": "http://39.106.153.140:13082/v1"
 	},
 	"categories": [
@@ -359,6 +357,11 @@
 				{
 					"command": "zyagent.historyButtonClicked",
 					"group": "navigation@4",
+					"when": "view == zyagent.SidebarProvider"
+				},
+				{
+					"command": "zyagent.profileButtonClicked",
+					"group": "navigation@5",
 					"when": "view == zyagent.SidebarProvider"
 				},
 				{

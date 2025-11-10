@@ -3,6 +3,7 @@ import { createVSCodeAPIMock, type IdentityInfo } from "./VSCode.js"
 import { logs } from "../services/logs.js"
 import type { ExtensionMessage, WebviewMessage, ExtensionState } from "../types/messages.js"
 import { getTelemetryService } from "../services/telemetry/index.js"
+import { DEFAULT_MODE_SLUG } from "../constants/modes/defaults.js"
 
 export interface ExtensionHostOptions {
 	workspacePath: string
@@ -673,7 +674,7 @@ export class ExtensionHost extends EventEmitter {
 				kilocodeOrganizationId: "",
 			},
 			chatMessages: [],
-			mode: "code",
+			mode: DEFAULT_MODE_SLUG,
 			customModes: [],
 			taskHistoryFullLength: 0,
 			taskHistoryVersion: 0,

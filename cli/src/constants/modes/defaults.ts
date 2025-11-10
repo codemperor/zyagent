@@ -40,7 +40,7 @@ export const DEFAULT_MODES: ModeConfig[] = [
 /**
  * Default mode slug
  */
-export const DEFAULT_MODE_SLUG = "code"
+export const DEFAULT_MODE_SLUG = "ask"
 
 /**
  * Get mode configuration by slug

@@ -38,7 +38,7 @@ export const ZyagentGateway = ({
 	modelValidationError,
 }: ZyagentGatewayProps) => {
 	const { t } = useAppTranslation()
-	const { homepages } = extensionPkg as { homepages: { pricing: string; doc: string; llmApiKey: string } }
+	const { homepages } = extensionPkg as { homepages: { baseURL: string; llmApiKey: string } }
 
 	const [azureApiVersionSelected, setAzureApiVersionSelected] = useState(!!apiConfiguration?.azureApiVersion)
 	const [openAiLegacyFormatSelected, setOpenAiLegacyFormatSelected] = useState(!!apiConfiguration?.openAiLegacyFormat)
@@ -155,7 +155,7 @@ export const ZyagentGateway = ({
 				models={openAiModels}
 				modelIdKey="openAiModelId"
 				serviceName="Zyagent Gateway"
-				serviceUrl={homepages.pricing}
+				serviceUrl={homepages.baseURL}
 				organizationAllowList={organizationAllowList}
 				errorMessage={modelValidationError}
 			/>

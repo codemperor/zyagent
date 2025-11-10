@@ -459,11 +459,11 @@ const ApiOptions = ({
 		}
 		// kilocode_change end
 
-		// Special case: Zyagent Gateway docs come from package.json homepages.doc
-		const { homepages } = extensionPkg as { homepages: { baseURL: string; pricing: string; doc: string } }
+		// Special case: Zyagent Gateway docs come from package.json
+		const { homepages } = extensionPkg as { homepages: { baseURL: string } }
 		if (selectedProvider === "zyagent-gateway") {
 			return {
-				url: homepages.doc,
+				url: homepages.baseURL,
 				name,
 			}
 		}

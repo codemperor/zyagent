@@ -18,6 +18,7 @@ import { MdmService } from "../services/mdm/MdmService"
 import { t } from "../i18n"
 import { getAppUrl } from "@roo-code/types" // kilocode_change
 import { generateTerminalCommand } from "../utils/terminalCommandGenerator" // kilocode_change
+import extensionManifest from "../package.json"
 
 /**
  * Helper to get the visible ClineProvider instance or log if not found.
@@ -157,13 +158,13 @@ const getCommandsMap = ({ context, outputChannel }: RegisterCommandOptions): Rec
 	},
 	// kilocode_change begin
 	profileButtonClicked: () => {
-		const visibleProvider = getVisibleProviderOrLog(outputChannel)
-
-		if (!visibleProvider) {
+		const baseUrl = (extensionManifest as any)?.homepages?.baseURL
+		if (typeof baseUrl === "string" && baseUrl.length > 0) {
+			vscode.env.openExternal(vscode.Uri.parse(baseUrl))
 			return
 		}
-
-		visibleProvider.postMessageToWebview({ type: "action", action: "profileButtonClicked" })
+		// Fallback to app url if baseURL missing
+		vscode.env.openExternal(vscode.Uri.parse(getAppUrl()))
 	},
 	helpButtonClicked: () => {
 		vscode.env.openExternal(vscode.Uri.parse(getAppUrl()))
