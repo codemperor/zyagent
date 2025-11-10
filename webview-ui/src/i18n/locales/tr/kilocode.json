@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "ZyAgent'a hoş geldiniz!",
-		"introText1": "ZyAgent ücretsiz, açık kaynaklı bir AI kodlama ajanıdır.",
-		"introText2": "Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5 ve 450+ diğer en yeni AI modelleri ile çalışır.",
-		"introText3": "Ücretsiz hesap oluşturun ve ilk yüklemenizde $20 bonus kredi alın.",
+		"greeting": "Hoş geldiniz! ZyAgent size tüm kalbiyle hizmet etmek için burada!",
+		"introText1": "Ben Xiao Y, profesyonel iş asistanınız ve AI programlama ajanınızım.",
+		"introText2": "Görevleri tamamlamak için sizinle işbirliği yapmak üzere çeşitli büyük dil modelleri ve araçlar kullanabilirim.",
+		"introText3": "Bir hesap oluşturun, Zyagent Gateway'i seçin, token'ınızı girin, herhangi bir büyük dil modeli seçin ve kullanmaya başlayabilirsiniz.",
 		"ctaButton": "Başla",
 		"manualModeButton": "Kendi API anahtarınızı kullanın",
 		"alreadySignedUp": "Zaten kaydoldunuz mu?",

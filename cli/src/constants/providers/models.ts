@@ -105,6 +105,7 @@ export const PROVIDER_TO_ROUTER_NAME: Record<ProviderName, RouterName | null> = 
 	deepinfra: "deepinfra",
 	"io-intelligence": "io-intelligence",
 	"vercel-ai-gateway": "vercel-ai-gateway",
+	"zyagent-gateway": null,
 	// Providers without dynamic model support
 	anthropic: null,
 	bedrock: null,
@@ -150,6 +151,7 @@ export const PROVIDER_MODEL_FIELD: Record<ProviderName, string | null> = {
 	deepinfra: "deepInfraModelId",
 	"io-intelligence": "ioIntelligenceModelId",
 	"vercel-ai-gateway": "vercelAiGatewayModelId",
+	"zyagent-gateway": "openAiModelId",
 	// Providers without dynamic model support
 	anthropic: null,
 	bedrock: null,

@@ -11,18 +11,18 @@ import React, {
 } from "react"
 import {
 	CheckCheck,
-	SquareMousePointer,
+	// SquareMousePointer,
 	Webhook,
 	GitBranch,
 	Bell,
 	Database,
 	SquareTerminal,
-	FlaskConical,
+	// FlaskConical,
 	AlertTriangle,
 	Globe,
 	Info,
 	Server, // kilocode_change
-	Bot, // kilocode_change
+	// Bot, // kilocode_change
 	MessageSquare,
 	Monitor,
 	LucideIcon,
@@ -124,7 +124,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 		currentApiConfigName,
 		listApiConfigMeta,
 		uriScheme,
-		kiloCodeWrapperProperties, // kilocode_change
+		// kiloCodeWrapperProperties, // kilocode_change
 		settingsImportedAt,
 	} = extensionState
 
@@ -636,21 +636,24 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, t
 			{ id: "providers", icon: Webhook },
 			{ id: "autoApprove", icon: CheckCheck },
 			// { id: "slashCommands", icon: SquareSlash }, // kilocode_change: needs work to be re-introduced
-			{ id: "browser", icon: SquareMousePointer },
+			// { id: "browser", icon: SquareMousePointer },
 			{ id: "checkpoints", icon: GitBranch },
 			{ id: "display", icon: Monitor }, // kilocode_change
-			...(kiloCodeWrapperProperties?.kiloCodeWrapped ? [] : [{ id: "ghost" as const, icon: Bot }]), // kilocode_change
+			// kilocode_change: hide ghost (autocomplete) menu item, but keep code
+			// ...(kiloCodeWrapperProperties?.kiloCodeWrapped ? [] : [{ id: "ghost" as const, icon: Bot }]),
 			{ id: "notifications", icon: Bell },
 			{ id: "contextManagement", icon: Database },
 			{ id: "terminal", icon: SquareTerminal },
 			{ id: "prompts", icon: MessageSquare },
 			// { id: "ui", icon: Glasses }, // kilocode_change: we have our own display section
-			{ id: "experimental", icon: FlaskConical },
+			// kilocode_change: hide experimental menu item, but keep code
+			// { id: "experimental", icon: FlaskConical },
 			{ id: "language", icon: Globe },
 			{ id: "mcp", icon: Server },
 			{ id: "about", icon: Info },
 		],
-		[kiloCodeWrapperProperties?.kiloCodeWrapped], // kilocode_change
+		// [kiloCodeWrapperProperties?.kiloCodeWrapped], // kilocode_change
+		[],
 	)
 	// Update target section logic to set active tab
 	useEffect(() => {

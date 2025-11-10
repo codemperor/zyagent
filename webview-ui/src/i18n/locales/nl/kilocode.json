@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "Welkom bij ZyAgent!",
-		"introText1": "ZyAgent is een gratis, open source AI coding agent.",
-		"introText2": "Het werkt met de nieuwste AI modellen zoals Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5, en meer dan 450 andere.",
-		"introText3": "Maak een gratis account aan en krijg $20 bonuskrediet bij je eerste opwaardering.",
+		"greeting": "Welkom! ZyAgent is hier om u van harte te dienen!",
+		"introText1": "Ik ben Xiao Y, uw professionele werkassistent en AI-programmeeragent.",
+		"introText2": "Ik kan verschillende grote taalmodelen en tools gebruiken om met u samen te werken bij het voltooien van taken.",
+		"introText3": "Maak een account aan, selecteer Zyagent Gateway, voer uw token in, kies een groot taalmodel en u kunt beginnen met gebruiken.",
 		"ctaButton": "Aan de slag",
 		"manualModeButton": "Gebruik je eigen API-sleutel",
 		"alreadySignedUp": "Al aangemeld?",

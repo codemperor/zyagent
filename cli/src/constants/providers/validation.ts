@@ -38,6 +38,7 @@ export const PROVIDER_REQUIRED_FIELDS: Record<ProviderName, string[]> = {
 	requesty: ["requestyApiKey", "requestyModelId"],
 	roo: ["apiModelId"],
 	"vercel-ai-gateway": ["vercelAiGatewayApiKey", "vercelAiGatewayModelId"],
+	"zyagent-gateway": ["openAiApiKey"],
 	"human-relay": ["apiModelId"],
 	"fake-ai": ["apiModelId"],
 	// Special cases handled separately in handleSpecialValidations

@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "Bienvenue dans ZyAgent !",
-		"introText1": "ZyAgent est un agent de codage IA gratuit et open source.",
-		"introText2": "Il fonctionne avec les derniers modèles d'IA comme Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5, et plus de 450 autres.",
-		"introText3": "Créez un compte gratuit et obtenez 20 $ de crédits bonus lors de votre première recharge.",
+		"greeting": "Bienvenue ! ZyAgent est là pour vous servir de tout cœur !",
+		"introText1": "Je suis Xiao Y, votre assistant professionnel et agent de programmation IA.",
+		"introText2": "Je peux utiliser divers modèles de langage volumineux et des outils pour collaborer avec vous dans l'accomplissement des tâches.",
+		"introText3": "Créez un compte, sélectionnez Zyagent Gateway, entrez votre jeton, choisissez n'importe quel modèle de langage volumineux, et vous pouvez commencer à l'utiliser.",
 		"ctaButton": "Commencer",
 		"manualModeButton": "Utilisez votre propre clé API",
 		"alreadySignedUp": "Déjà inscrit ?",

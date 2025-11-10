@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "歡迎使用 ZyAgent！",
-		"introText1": "ZyAgent 是一個免費的開源 AI 程式設計代理。",
-		"introText2": "它適用於最新的 AI 模型，如 Claude Sonnet 4.5、Gemini 2.5 Pro、GPT-5 以及 450 多個其他模型。",
-		"introText3": "建立免費帳戶，首次儲值即可獲得 20 美元獎勵額度。",
+		"greeting": "歡迎到來，ZyAgent將為您竭誠服務！",
+		"introText1": "我是小y，您的職業工作助手以及AI編程智能體。",
+		"introText2": "我可以使用各類大模型以及工具和您協同完成任務。",
+		"introText3": "創建賬戶，選擇 Zyagent Gateway, 並輸入您的令牌，選擇任意大模型後，即可開始使用。",
 		"ctaButton": "開始使用",
 		"manualModeButton": "使用你自己的 API 金鑰",
 		"alreadySignedUp": "已經註冊了？",

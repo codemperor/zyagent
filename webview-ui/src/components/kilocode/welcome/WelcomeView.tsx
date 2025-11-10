@@ -5,10 +5,10 @@ import { vscode } from "../../../utils/vscode"
 import { Tab, TabContent } from "../../common/Tab"
 import { useAppTranslation } from "../../../i18n/TranslationContext"
 import { ButtonPrimary } from "../common/ButtonPrimary"
-import { ButtonLink } from "../common/ButtonLink"
+// import { ButtonLink } from "../common/ButtonLink"
 import ApiOptions from "../../settings/ApiOptions"
 import KiloCodeAuth from "../common/KiloCodeAuth"
-import { getKiloCodeBackendSignInUrl } from "../helpers"
+// import { getKiloCodeBackendSignInUrl } from "../helpers"
 
 const WelcomeView = () => {
 	const {
@@ -16,8 +16,8 @@ const WelcomeView = () => {
 		currentApiConfigName,
 		setApiConfiguration,
 		uriScheme,
-		uiKind,
-		kiloCodeWrapperProperties,
+		// uiKind,
+		// kiloCodeWrapperProperties,
 	} = useExtensionState()
 	const [errorMessage, setErrorMessage] = useState<string | undefined>()
 	const [manualConfig, setManualConfig] = useState(false)
@@ -53,12 +53,17 @@ const WelcomeView = () => {
 							setErrorMessage={setErrorMessage}
 							hideKiloCodeButton
 						/>
+						{/* kilocode_change: Log in at ZyAgent button hidden
 						{isSettingUpKiloCode ? (
 							<ButtonLink
 								href={getKiloCodeBackendSignInUrl(uriScheme, uiKind, kiloCodeWrapperProperties)}>
 								{t("kilocode:settings.provider.login")}
 							</ButtonLink>
 						) : (
+							<ButtonPrimary onClick={handleSubmit}>{t("welcome:start")}</ButtonPrimary>
+						)}
+						kilocode_change end */}
+						{!isSettingUpKiloCode && (
 							<ButtonPrimary onClick={handleSubmit}>{t("welcome:start")}</ButtonPrimary>
 						)}
 					</>

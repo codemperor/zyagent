@@ -99,7 +99,7 @@ export const isInternalProvider = (key: string): key is InternalProvider =>
  * Custom providers are completely configurable within Roo Code settings.
  */
 
-export const customProviders = ["openai"] as const
+export const customProviders = ["openai", "zyagent-gateway"] as const
 
 export type CustomProvider = (typeof customProviders)[number]
 
@@ -156,6 +156,7 @@ export const providerNames = [
 	"vertex",
 	"xai",
 	"zai",
+	"zyagent-gateway",
 ] as const
 
 export const providerNamesSchema = z.enum(providerNames)
@@ -499,6 +500,20 @@ const vercelAiGatewaySchema = baseProviderSettingsSchema.extend({
 	vercelAiGatewayModelId: z.string().optional(),
 })
 
+const zyagentGatewaySchema = baseProviderSettingsSchema.extend({
+	openAiBaseUrl: z.string().optional(),
+	openAiApiKey: z.string().optional(),
+	openAiLegacyFormat: z.boolean().optional(),
+	openAiR1FormatEnabled: z.boolean().optional(),
+	openAiModelId: z.string().optional(),
+	openAiCustomModelInfo: modelInfoSchema.nullish(),
+	openAiUseAzure: z.boolean().optional(),
+	azureApiVersion: z.string().optional(),
+	openAiStreamingEnabled: z.boolean().optional(),
+	openAiHostHeader: z.string().optional(),
+	openAiHeaders: z.record(z.string(), z.string()).optional(),
+})
+
 const defaultSchema = z.object({
 	apiProvider: z.undefined(),
 })
@@ -547,6 +562,7 @@ export const providerSettingsSchemaDiscriminated = z.discriminatedUnion("apiProv
 	qwenCodeSchema.merge(z.object({ apiProvider: z.literal("qwen-code") })),
 	rooSchema.merge(z.object({ apiProvider: z.literal("roo") })),
 	vercelAiGatewaySchema.merge(z.object({ apiProvider: z.literal("vercel-ai-gateway") })),
+	zyagentGatewaySchema.merge(z.object({ apiProvider: z.literal("zyagent-gateway") })),
 	defaultSchema,
 ])
 
@@ -595,6 +611,7 @@ export const providerSettingsSchema = z.object({
 	...qwenCodeSchema.shape,
 	...rooSchema.shape,
 	...vercelAiGatewaySchema.shape,
+	...zyagentGatewaySchema.shape,
 	...codebaseIndexProviderSchema.shape,
 })
 
@@ -830,6 +847,9 @@ export const MODELS_BY_PROVIDER: Record<
 	// kilocode_change end
 	deepinfra: { id: "deepinfra", label: "DeepInfra", models: [] },
 	"vercel-ai-gateway": { id: "vercel-ai-gateway", label: "Vercel AI Gateway", models: [] },
+
+	// Custom providers; models pulled from remote APIs.
+	"zyagent-gateway": { id: "zyagent-gateway", label: "Zyagent Gateway", models: [] },
 
 	// Local providers; models discovered from localhost endpoints.
 	lmstudio: { id: "lmstudio", label: "LM Studio", models: [] },

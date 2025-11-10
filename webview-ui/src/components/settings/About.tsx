@@ -1,11 +1,11 @@
 import {
 	HTMLAttributes,
-	useState, // kilocode_change
+	// useState, // kilocode_change
 } from "react"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import { Trans } from "react-i18next"
 import { Info, Download, Upload, TriangleAlert } from "lucide-react"
-import { VSCodeCheckbox, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 
 import type { TelemetrySetting } from "@roo-code/types"
 
@@ -17,7 +17,8 @@ import { Button } from "@/components/ui"
 
 import { SectionHeader } from "./SectionHeader"
 import { Section } from "./Section"
-import { getMemoryPercentage } from "@/kilocode/helpers"
+// import { getMemoryPercentage } from "@/kilocode/helpers"
+import extensionPkg from "../../../../src/package.json"
 
 type AboutProps = HTMLAttributes<HTMLDivElement> & {
 	telemetrySetting: TelemetrySetting
@@ -27,7 +28,8 @@ type AboutProps = HTMLAttributes<HTMLDivElement> & {
 export const About = ({ telemetrySetting, setTelemetrySetting, className, ...props }: AboutProps) => {
 	const { t } = useAppTranslation()
 
-	const [kiloCodeBloat, setKiloCodeBloat] = useState<number[][]>([])
+	// const [kiloCodeBloat, setKiloCodeBloat] = useState<number[][]>([])
+	const repoUrl = (extensionPkg as any)?.repository?.url
 
 	return (
 		<div className={cn("flex flex-col gap-2", className)} {...props}>
@@ -44,46 +46,37 @@ export const About = ({ telemetrySetting, setTelemetrySetting, className, ...pro
 			</SectionHeader>
 
 			<Section>
-				<div>
-					<VSCodeCheckbox
-						checked={telemetrySetting !== "disabled"}
-						onChange={(e: any) => {
-							const checked = e.target.checked === true
-							setTelemetrySetting(checked ? "enabled" : "disabled")
-						}}>
-						{t("settings:footer.telemetry.label")}
-					</VSCodeCheckbox>
-					<p className="text-vscode-descriptionForeground text-sm mt-0">
-						<Trans
-							i18nKey="settings:footer.telemetry.description"
-							components={{
-								privacyLink: <VSCodeLink href="https://kilocode.ai/privacy" />,
-							}}
-						/>
-					</p>
-				</div>
+				{/* kilocode_change start - hide telemetry section */}
+				{/* {false && (
+					<div>
+						<VSCodeCheckbox
+							checked={telemetrySetting !== "disabled"}
+							onChange={(e: any) => {
+								const checked = e.target.checked === true
+								setTelemetrySetting(checked ? "enabled" : "disabled")
+							}}>
+							{t("settings:footer.telemetry.label")}
+						</VSCodeCheckbox>
+						<p className="text-vscode-descriptionForeground text-sm mt-0">
+							<Trans
+								i18nKey="settings:footer.telemetry.description"
+								components={{
+									privacyLink: <VSCodeLink href="https://kilocode.ai/privacy" />,
+								}}
+							/>
+						</p>
+					</div>
+				)} */}
+				{/* kilocode_change end */}
 
 				<div>
 					<Trans
 						i18nKey="settings:footer.feedback"
 						components={{
-							githubLink: <VSCodeLink href="https://github.com/Kilo-Org/kilocode" />,
-							redditLink: <VSCodeLink href="https://reddit.com/r/kilocode" />,
-							discordLink: <VSCodeLink href="https://kilocode.ai/discord" />,
+							githubLink: <VSCodeLink href={repoUrl} />,
 						}}
 					/>
 				</div>
-
-				{/* kilocode_change start */}
-				<div>
-					<Trans
-						i18nKey="settings:footer.support"
-						components={{
-							supportLink: <VSCodeLink href="https://kilocode.ai/support" />,
-						}}
-					/>
-				</div>
-				{/* kilocode_change end */}
 
 				<div className="flex flex-wrap items-center gap-2 mt-2">
 					<Button onClick={() => vscode.postMessage({ type: "exportSettings" })} className="w-28">
@@ -102,10 +95,10 @@ export const About = ({ telemetrySetting, setTelemetrySetting, className, ...pro
 						{t("settings:footer.settings.reset")}
 					</Button>
 				</div>
-
+				{/* 
 				{
 					// kilocode_change start
-					process.env.NODE_ENV === "development" && (
+					false && process.env.NODE_ENV === "development" && (
 						<div className="flex flex-wrap items-center gap-2 mt-2">
 							<Button
 								variant="destructive"
@@ -118,7 +111,7 @@ export const About = ({ telemetrySetting, setTelemetrySetting, className, ...pro
 						</div>
 					)
 					// kilocode_change end
-				}
+				} */}
 			</Section>
 		</div>
 	)

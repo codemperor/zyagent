@@ -103,6 +103,7 @@ export type ProviderName =
 	| "io-intelligence"
 	| "roo"
 	| "vercel-ai-gateway"
+	| "zyagent-gateway"
 
 // Provider Settings Entry for profile metadata
 export interface ProviderSettingsEntry {

@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "Chào mừng bạn đến với ZyAgent!",
-		"introText1": "ZyAgent là một agent lập trình AI miễn phí và mã nguồn mở.",
-		"introText2": "Hoạt động với các mô hình AI mới nhất như Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5, và hơn 450 mô hình khác.",
-		"introText3": "Tạo tài khoản miễn phí và nhận $20 tín dụng thưởng khi nạp tiền lần đầu.",
+		"greeting": "Chào mừng! ZyAgent ở đây để phục vụ bạn hết lòng!",
+		"introText1": "Tôi là Xiao Y, trợ lý công việc chuyên nghiệp và đại lý lập trình AI của bạn.",
+		"introText2": "Tôi có thể sử dụng các mô hình ngôn ngữ lớn và công cụ khác nhau để hợp tác với bạn trong việc hoàn thành nhiệm vụ.",
+		"introText3": "Tạo tài khoản, chọn Zyagent Gateway, nhập token của bạn, chọn bất kỳ mô hình ngôn ngữ lớn nào và bạn có thể bắt đầu sử dụng.",
 		"ctaButton": "Bắt đầu",
 		"manualModeButton": "Sử dụng khóa API của riêng bạn",
 		"alreadySignedUp": "Đã đăng ký?",

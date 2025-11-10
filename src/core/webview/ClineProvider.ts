@@ -2128,9 +2128,9 @@ ${prompt}
 			experiments: experiments ?? experimentDefault,
 			mcpServers: this.mcpHub?.getAllServers() ?? [],
 			maxOpenTabsContext: maxOpenTabsContext ?? 20,
-			maxWorkspaceFiles: maxWorkspaceFiles ?? 200,
+			maxWorkspaceFiles: maxWorkspaceFiles ?? 50,
 			cwd,
-			browserToolEnabled: browserToolEnabled ?? true,
+			browserToolEnabled: browserToolEnabled ?? false,
 			telemetrySetting,
 			telemetryKey,
 			machineId,
@@ -2185,7 +2185,7 @@ ${prompt}
 			dismissedNotificationIds: dismissedNotificationIds ?? [], // kilocode_change
 			morphApiKey, // kilocode_change
 			fastApplyModel: fastApplyModel ?? "auto", // kilocode_change: Fast Apply model selection
-			alwaysAllowFollowupQuestions: alwaysAllowFollowupQuestions ?? false,
+			alwaysAllowFollowupQuestions: alwaysAllowFollowupQuestions ?? true,
 			followupAutoApproveTimeoutMs: followupAutoApproveTimeoutMs ?? 60000,
 			includeDiagnosticMessages: includeDiagnosticMessages ?? true,
 			maxDiagnosticMessages: maxDiagnosticMessages ?? 50,
@@ -2333,7 +2333,7 @@ ${prompt}
 			alwaysAllowMcp: stateValues.alwaysAllowMcp ?? true,
 			alwaysAllowModeSwitch: stateValues.alwaysAllowModeSwitch ?? true,
 			alwaysAllowSubtasks: stateValues.alwaysAllowSubtasks ?? true,
-			alwaysAllowFollowupQuestions: stateValues.alwaysAllowFollowupQuestions ?? false,
+			alwaysAllowFollowupQuestions: stateValues.alwaysAllowFollowupQuestions ?? true,
 			alwaysAllowUpdateTodoList: stateValues.alwaysAllowUpdateTodoList ?? true, // kilocode_change
 			yoloMode: stateValues.yoloMode ?? false, // kilocode_change
 			followupAutoApproveTimeoutMs: stateValues.followupAutoApproveTimeoutMs ?? 60000,
@@ -2375,7 +2375,7 @@ ${prompt}
 			language: stateValues.language ?? formatLanguage(vscode.env.language),
 			mcpEnabled: true, // kilocode_change: always true
 			enableMcpServerCreation: stateValues.enableMcpServerCreation ?? true,
-			alwaysApproveResubmit: stateValues.alwaysApproveResubmit ?? false,
+			alwaysApproveResubmit: stateValues.alwaysApproveResubmit ?? true,
 			requestDelaySeconds: Math.max(5, stateValues.requestDelaySeconds ?? 10),
 			currentApiConfigName: stateValues.currentApiConfigName ?? "default",
 			listApiConfigMeta: stateValues.listApiConfigMeta ?? [],
@@ -2401,9 +2401,9 @@ ${prompt}
 			autoApprovalEnabled: stateValues.autoApprovalEnabled ?? true,
 			customModes,
 			maxOpenTabsContext: stateValues.maxOpenTabsContext ?? 20,
-			maxWorkspaceFiles: stateValues.maxWorkspaceFiles ?? 200,
+			maxWorkspaceFiles: stateValues.maxWorkspaceFiles ?? 50,
 			openRouterUseMiddleOutTransform: stateValues.openRouterUseMiddleOutTransform,
-			browserToolEnabled: stateValues.browserToolEnabled ?? true,
+			browserToolEnabled: stateValues.browserToolEnabled ?? false,
 			telemetrySetting: stateValues.telemetrySetting || "unset",
 			showRooIgnoredFiles: stateValues.showRooIgnoredFiles ?? false,
 			showAutoApproveMenu: stateValues.showAutoApproveMenu ?? false, // kilocode_change

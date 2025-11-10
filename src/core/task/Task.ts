@@ -2705,7 +2705,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 				provider.context,
 				this.cwd,
 				// kilocode_change: supports images => supports browser
-				(this.api.getModel().info.supportsImages ?? false) && (browserToolEnabled ?? true),
+				(this.api.getModel().info.supportsImages ?? false) && (browserToolEnabled ?? false),
 				mcpHub,
 				this.diffStrategy,
 				browserViewportSize,

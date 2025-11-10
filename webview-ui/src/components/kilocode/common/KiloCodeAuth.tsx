@@ -3,8 +3,9 @@ import { ButtonLink } from "./ButtonLink"
 import { ButtonSecondary } from "./ButtonSecondary"
 import Logo from "./Logo"
 import { useAppTranslation } from "@/i18n/TranslationContext"
-import { getKiloCodeBackendSignUpUrl } from "../helpers"
-import { useExtensionState } from "@/context/ExtensionStateContext"
+// import { getKiloCodeBackendSignUpUrl } from "../helpers"
+// import { useExtensionState } from "@/context/ExtensionStateContext"
+import extensionPkg from "../../../../../src/package.json"
 
 interface KiloCodeAuthProps {
 	onManualConfigClick?: () => void
@@ -12,9 +13,10 @@ interface KiloCodeAuthProps {
 }
 
 const KiloCodeAuth: React.FC<KiloCodeAuthProps> = ({ onManualConfigClick, className = "" }) => {
-	const { uriScheme, uiKind, kiloCodeWrapperProperties } = useExtensionState()
+	// const { uriScheme, uiKind, kiloCodeWrapperProperties } = useExtensionState()
 
 	const { t } = useAppTranslation()
+	const { homepages } = extensionPkg as { homepages: { baseURL: string; pricing: string; doc: string } }
 
 	return (
 		<div className={`flex flex-col items-center ${className}`}>
@@ -26,15 +28,7 @@ const KiloCodeAuth: React.FC<KiloCodeAuthProps> = ({ onManualConfigClick, classN
 			<p className="text-center mb-5">{t("kilocode:welcome.introText3")}</p>
 
 			<div className="w-full flex flex-col gap-5">
-				<ButtonLink
-					href={getKiloCodeBackendSignUpUrl(uriScheme, uiKind, kiloCodeWrapperProperties)}
-					onClick={() => {
-						if (uiKind === "Web" && onManualConfigClick) {
-							onManualConfigClick()
-						}
-					}}>
-					{t("kilocode:welcome.ctaButton")}
-				</ButtonLink>
+				<ButtonLink href={homepages.baseURL}>{t("kilocode:welcome.ctaButton")}</ButtonLink>
 
 				{!!onManualConfigClick && (
 					<ButtonSecondary onClick={() => onManualConfigClick && onManualConfigClick()}>

@@ -823,6 +823,7 @@ export const PROVIDER_DEFAULT_MODELS: Record<ProviderName, string> = {
 	requesty: "gpt-4o",
 	roo: "gpt-4o",
 	"vercel-ai-gateway": "gpt-4o",
+	"zyagent-gateway": "gpt-4o",
 	"virtual-quota-fallback": "gpt-4o",
 	"human-relay": "human",
 	"fake-ai": "fake-model",

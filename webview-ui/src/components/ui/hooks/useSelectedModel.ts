@@ -307,6 +307,11 @@ function getSelectedModel({
 			const info = apiConfiguration?.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults
 			return { id, info }
 		}
+		case "zyagent-gateway": {
+			const id = apiConfiguration.openAiModelId ?? ""
+			const info = apiConfiguration?.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults
+			return { id, info }
+		}
 		case "ollama": {
 			const id = apiConfiguration.ollamaModelId ?? ""
 			const info = ollamaModels && ollamaModels[apiConfiguration.ollamaModelId!]

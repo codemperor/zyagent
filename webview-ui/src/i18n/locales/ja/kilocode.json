@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "ZyAgentへようこそ！",
-		"introText1": "ZyAgentは無料のオープンソースAIコーディングエージェントです。",
-		"introText2": "Claude Sonnet 4.5、Gemini 2.5 Pro、GPT-5、その他450以上の最新のAIモデルと連携します。",
-		"introText3": "無料アカウントを作成して、初回チャージ時に$20のボーナスクレジットを獲得しましょう。",
+		"greeting": "ようこそ！ZyAgentが心を込めてサービスを提供いたします！",
+		"introText1": "私は小Yです。あなたの専門的な仕事のアシスタントであり、AIプログラミングエージェントです。",
+		"introText2": "私は様々な大規模言語モデルとツールを使用して、あなたと協力してタスクを完了することができます。",
+		"introText3": "アカウントを作成し、Zyagent Gatewayを選択し、トークンを入力し、任意の大規模言語モデルを選択すると、使用を開始できます。",
 		"ctaButton": "始める",
 		"manualModeButton": "自分のAPIキーを使う",
 		"alreadySignedUp": "すでに登録済みですか？",

@@ -36,7 +36,7 @@ export async function getEnvironmentDetails(cline: Task, includeFileDetails: boo
 	const {
 		terminalOutputLineLimit = 500,
 		terminalOutputCharacterLimit = DEFAULT_TERMINAL_OUTPUT_CHARACTER_LIMIT,
-		maxWorkspaceFiles = 200,
+		maxWorkspaceFiles = 50,
 	} = state ?? {}
 
 	// It could be useful for cline to know if the user went from one or no
@@ -270,7 +270,7 @@ export async function getEnvironmentDetails(cline: Task, includeFileDetails: boo
 			// permission popup.
 			details += "(Desktop files not shown automatically. Use list_files to explore if needed.)"
 		} else {
-			const maxFiles = maxWorkspaceFiles ?? 200
+			const maxFiles = maxWorkspaceFiles ?? 50
 
 			// Early return for limit of 0
 			if (maxFiles === 0) {

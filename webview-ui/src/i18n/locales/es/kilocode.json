@@ -1,9 +1,9 @@
 {
 	"welcome": {
-		"greeting": "¡Bienvenido a ZyAgent!",
-		"introText1": "ZyAgent es un agente de codificación de IA gratuito y de código abierto.",
-		"introText2": "Funciona con los modelos de IA más recientes como Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5, y más de 450 modelos adicionales.",
-		"introText3": "Crea una cuenta gratuita y obtén $20 en créditos de bonificación cuando recargues por primera vez.",
+		"greeting": "¡Bienvenido! ZyAgent está aquí para servirle con dedicación.",
+		"introText1": "Soy Xiao Y, su asistente de trabajo profesional y agente de programación de IA.",
+		"introText2": "Puedo usar varios modelos de lenguaje grande y herramientas para colaborar con usted en la realización de tareas.",
+		"introText3": "Cree una cuenta, seleccione Zyagent Gateway, ingrese su token, elija cualquier modelo de lenguaje grande y comience a usarlo.",
 		"ctaButton": "Empezar",
 		"manualModeButton": "Usa tu propia clave API",
 		"alreadySignedUp": "¿Ya te registraste?",

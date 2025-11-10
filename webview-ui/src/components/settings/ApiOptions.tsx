@@ -109,6 +109,7 @@ import {
 	Featherless,
 	VercelAiGateway,
 	DeepInfra,
+	ZyagentGateway,
 } from "./providers"
 
 import { MODELS_BY_PROVIDER, PROVIDERS } from "./constants"
@@ -127,8 +128,8 @@ import { ToolUseControl } from "./kilocode/ToolUseControl" // kilocode_change
 import { BedrockCustomArn } from "./providers/BedrockCustomArn"
 import { KiloCode } from "../kilocode/settings/providers/KiloCode" // kilocode_change
 import { buildDocLink } from "@src/utils/docLinks"
-import { KiloProviderRouting, KiloProviderRoutingManagedByOrganization } from "./providers/KiloProviderRouting"
 import { RateLimitAfterControl } from "./RateLimitAfterSettings" // kilocode_change
+import extensionPkg from "../../../../src/package.json"
 
 export interface ApiOptionsProps {
 	uriScheme: string | undefined
@@ -249,11 +250,18 @@ const ApiOptions = ({
 		}
 	}, [selectedModelId, setApiConfigurationField, apiConfiguration.apiModelId])
 
+	// Set default provider to zyagent-gateway if not set
+	useEffect(() => {
+		if (!apiConfiguration?.apiProvider) {
+			setApiConfigurationField("apiProvider", "zyagent-gateway" as ProviderName, false)
+		}
+	}, [apiConfiguration?.apiProvider, setApiConfigurationField])
+
 	// Debounced refresh model updates, only executed 250ms after the user
 	// stops typing.
 	useDebounce(
 		() => {
-			if (selectedProvider === "openai") {
+			if (selectedProvider === "openai" || selectedProvider === ("zyagent-gateway" as ProviderName)) {
 				// Use our custom headers state to build the headers object.
 				const headerObject = convertHeadersToObject(customHeaders)
 
@@ -408,6 +416,7 @@ const ApiOptions = ({
 				roo: { field: "apiModelId", default: rooDefaultModelId },
 				"vercel-ai-gateway": { field: "vercelAiGatewayModelId", default: vercelAiGatewayDefaultModelId },
 				openai: { field: "openAiModelId" },
+				"zyagent-gateway": { field: "openAiModelId" },
 				ollama: { field: "ollamaModelId" },
 				lmstudio: { field: "lmStudioModelId" },
 				// kilocode_change start
@@ -449,6 +458,15 @@ const ApiOptions = ({
 			return undefined
 		}
 		// kilocode_change end
+
+		// Special case: Zyagent Gateway docs come from package.json homepages.doc
+		const { homepages } = extensionPkg as { homepages: { baseURL: string; pricing: string; doc: string } }
+		if (selectedProvider === "zyagent-gateway") {
+			return {
+				url: homepages.doc,
+				name,
+			}
+		}
 
 		// Get the URL slug - use custom mapping if available, otherwise use the provider key.
 		const slugs: Record<string, string> = {
@@ -657,6 +675,15 @@ const ApiOptions = ({
 				/>
 			)}
 
+			{selectedProvider === ("zyagent-gateway" as ProviderName) && (
+				<ZyagentGateway
+					apiConfiguration={apiConfiguration}
+					setApiConfigurationField={setApiConfigurationField}
+					organizationAllowList={organizationAllowList}
+					modelValidationError={modelValidationError}
+				/>
+			)}
+
 			{selectedProvider === "lmstudio" && (
 				<LMStudio apiConfiguration={apiConfiguration} setApiConfigurationField={setApiConfigurationField} />
 			)}
@@ -817,7 +844,16 @@ const ApiOptions = ({
 						<Select
 							value={selectedModelId === "custom-arn" ? "custom-arn" : selectedModelId}
 							onValueChange={(value) => {
-								setApiConfigurationField("apiModelId", value)
+								// Use the correct field based on provider
+								if (selectedProvider === "openai" || selectedProvider === "zyagent-gateway") {
+									setApiConfigurationField("openAiModelId", value)
+								} else if (selectedProvider === "ollama") {
+									setApiConfigurationField("ollamaModelId", value)
+								} else if (selectedProvider === "lmstudio") {
+									setApiConfigurationField("lmStudioModelId", value)
+								} else {
+									setApiConfigurationField("apiModelId", value)
+								}
 
 								// Clear custom ARN if not using custom ARN option.
 								if (value !== "custom-arn" && selectedProvider === "bedrock") {
@@ -887,6 +923,7 @@ const ApiOptions = ({
 				/>
 			)}
 
+			{/* kilocode_change start: Provider Routing section hidden
 			{
 				// kilocode_change start
 				(selectedProvider === "kilocode" || selectedProvider === "openrouter") &&
@@ -903,6 +940,7 @@ const ApiOptions = ({
 					))
 				// kilocode_change end
 			}
+			kilocode_change end */}
 
 			{!fromWelcomeView && selectedProvider !== "virtual-quota-fallback" /*kilocode_change*/ && (
 				<Collapsible open={isAdvancedSettingsOpen} onOpenChange={setIsAdvancedSettingsOpen}>

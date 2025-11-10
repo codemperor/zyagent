@@ -40,6 +40,7 @@ export const PROVIDER_LABELS: Record<ProviderName, string> = {
 	requesty: "Requesty",
 	roo: "Roo",
 	"vercel-ai-gateway": "Vercel AI Gateway",
+	"zyagent-gateway": "Zyagent Gateway",
 	"virtual-quota-fallback": "Virtual Quota Fallback",
 	"human-relay": "Human Relay",
 	"fake-ai": "Fake AI",

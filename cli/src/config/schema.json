@@ -261,6 +261,7 @@
 						"requesty",
 						"roo",
 						"vercel-ai-gateway",
+						"zyagent-gateway",
 						"virtual-quota-fallback",
 						"human-relay",
 						"fake-ai"
@@ -2063,6 +2064,88 @@
 									"family": { "minLength": 1 }
 								}
 							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "provider": { "const": "zyagent-gateway" } }
+					},
+					"then": {
+						"properties": {
+							"openAiApiKey": {
+								"type": "string",
+								"description": "Zyagent Gateway API key"
+							},
+							"openAiBaseUrl": {
+								"type": "string",
+								"description": "Zyagent Gateway base URL"
+							},
+							"openAiModelId": {
+								"type": "string",
+								"description": "Zyagent Gateway model ID"
+							},
+							"openAiLegacyFormat": {
+								"type": "boolean",
+								"description": "Use legacy format"
+							},
+							"openAiR1FormatEnabled": {
+								"type": "boolean",
+								"description": "Enable R1 format"
+							},
+							"openAiCustomModelInfo": {
+								"type": ["object", "null"],
+								"description": "Custom model information"
+							},
+							"openAiUseAzure": {
+								"type": "boolean",
+								"description": "Use Azure"
+							},
+							"azureApiVersion": {
+								"type": "string",
+								"description": "Azure API version"
+							},
+							"openAiStreamingEnabled": {
+								"type": "boolean",
+								"description": "Enable streaming"
+							},
+							"openAiHostHeader": {
+								"type": "string",
+								"description": "Host header"
+							},
+							"openAiHeaders": {
+								"type": "object",
+								"description": "Additional headers",
+								"additionalProperties": { "type": "string" }
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"provider": { "const": "zyagent-gateway" },
+							"openAiApiKey": { "type": "string", "minLength": 1 }
+						},
+						"required": ["openAiApiKey"]
+					},
+					"then": {
+						"properties": {
+							"openAiApiKey": { "minLength": 10 }
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"provider": { "const": "zyagent-gateway" },
+							"openAiModelId": { "type": "string", "minLength": 1 }
+						},
+						"required": ["openAiModelId"]
+					},
+					"then": {
+						"properties": {
+							"openAiModelId": { "minLength": 1 }
 						}
 					}
 				}

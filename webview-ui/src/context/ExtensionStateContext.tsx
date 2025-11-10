@@ -258,7 +258,7 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		remoteControlEnabled: false,
 		taskSyncEnabled: false,
 		featureRoomoteControlEnabled: false,
-		alwaysApproveResubmit: false,
+		alwaysApproveResubmit: true,
 		alwaysAllowWrite: true, // kilocode_change
 		alwaysAllowReadOnly: true, // kilocode_change
 		requestDelaySeconds: 5,
@@ -278,9 +278,9 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 		autoApprovalEnabled: true,
 		customModes: [],
 		maxOpenTabsContext: 20,
-		maxWorkspaceFiles: 200,
+		maxWorkspaceFiles: 50,
 		cwd: "",
-		browserToolEnabled: true,
+		browserToolEnabled: false,
 		telemetrySetting: "unset",
 		showRooIgnoredFiles: true, // Default to showing .rooignore'd files with lock symbol (current behavior).
 		showAutoApproveMenu: false, // kilocode_change
@@ -353,7 +353,7 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 	const [localWorkflows, setLocalWorkflows] = useState<ClineRulesToggles>({})
 	// kilocode_change end
 	const [marketplaceItems, setMarketplaceItems] = useState<any[]>([])
-	const [alwaysAllowFollowupQuestions, setAlwaysAllowFollowupQuestions] = useState(false) // Add state for follow-up questions auto-approve
+	const [alwaysAllowFollowupQuestions, setAlwaysAllowFollowupQuestions] = useState(true) // Add state for follow-up questions auto-approve
 	const [followupAutoApproveTimeoutMs, setFollowupAutoApproveTimeoutMs] = useState<number | undefined>(undefined) // Will be set from global settings
 	const [marketplaceInstalledMetadata, setMarketplaceInstalledMetadata] = useState<MarketplaceInstalledMetadata>({
 		project: {},
