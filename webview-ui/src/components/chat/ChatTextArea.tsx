@@ -41,6 +41,8 @@ import {
 import { IndexingStatusBadge } from "./IndexingStatusBadge"
 import { cn } from "@/lib/utils"
 import { usePromptHistory } from "./hooks/usePromptHistory"
+import { useSelectedModel } from "@/components/ui/hooks/useSelectedModel" // kilocode_change
+import { prettyModelName } from "@/utils/prettyModelName" // kilocode_change
 
 // kilocode_change start: pull slash commands from Cline
 import SlashCommandMenu from "@/components/chat/SlashCommandMenu"
@@ -112,6 +114,7 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 			globalWorkflows, // kilocode_change
 			taskHistoryVersion, // kilocode_change
 			clineMessages,
+			apiConfiguration, // kilocode_change: Get apiConfiguration for model display
 		} = useExtensionState()
 
 		// Find the ID and display text for the currently selected API configuration
@@ -122,6 +125,19 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 				displayName: currentApiConfigName || "", // Use the name directly for display
 			}
 		}, [listApiConfigMeta, currentApiConfigName])
+
+		// kilocode_change: Get current model information for display
+		const {
+			id: selectedModelId,
+			info: selectedModelInfo,
+			isLoading: isModelLoading,
+		} = useSelectedModel(apiConfiguration)
+		const currentModelDisplayName = useMemo(() => {
+			// kilocode_change: Don't show model name while loading to avoid showing default model name first
+			if (isModelLoading || !apiConfiguration) return ""
+			if (!selectedModelId) return ""
+			return selectedModelInfo?.displayName ?? prettyModelName(selectedModelId)
+		}, [selectedModelId, selectedModelInfo, isModelLoading, apiConfiguration])
 
 		const [gitCommits, setGitCommits] = useState<any[]>([])
 		const [showDropdown, setShowDropdown] = useState(false)
@@ -1615,6 +1631,12 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 									togglePinnedApiConfig={togglePinnedApiConfig}
 									selectApiConfigDisabled={selectApiConfigDisabled}
 								/>
+								{/* kilocode_change: Display current model name next to API config selector */}
+								{currentModelDisplayName && (
+									<span className="text-xs text-vscode-descriptionForeground opacity-70 truncate ml-2">
+										{currentModelDisplayName}
+									</span>
+								)}
 							</div>
 
 							{/* kilocode_change: hidden on small containerWidth

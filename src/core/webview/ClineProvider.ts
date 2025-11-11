@@ -2068,7 +2068,7 @@ ${prompt}
 			allowedMaxRequests,
 			allowedMaxCost,
 			autoCondenseContext: autoCondenseContext ?? true,
-			autoCondenseContextPercent: autoCondenseContextPercent ?? 100,
+			autoCondenseContextPercent: autoCondenseContextPercent ?? 85,
 			uriScheme: vscode.env.uriScheme,
 			uiKind: vscode.UIKind[vscode.env.uiKind], // kilocode_change
 			kiloCodeWrapperProperties, // kilocode_change wrapper information
@@ -2341,7 +2341,7 @@ ${prompt}
 			allowedMaxRequests: stateValues.allowedMaxRequests,
 			allowedMaxCost: stateValues.allowedMaxCost,
 			autoCondenseContext: stateValues.autoCondenseContext ?? true,
-			autoCondenseContextPercent: stateValues.autoCondenseContextPercent ?? 100,
+			autoCondenseContextPercent: stateValues.autoCondenseContextPercent ?? 85,
 			// taskHistory: stateValues.taskHistory ?? [], // kilocode_change
 			allowedCommands: stateValues.allowedCommands,
 			deniedCommands: stateValues.deniedCommands,

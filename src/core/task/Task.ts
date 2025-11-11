@@ -2819,7 +2819,7 @@ export class Task extends EventEmitter<TaskEvents> implements TaskLike {
 			requestDelaySeconds,
 			mode,
 			autoCondenseContext = true,
-			autoCondenseContextPercent = 100,
+			autoCondenseContextPercent = 85,
 			profileThresholds = {},
 		} = state ?? {}
 
