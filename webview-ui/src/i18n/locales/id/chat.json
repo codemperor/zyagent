@@ -134,6 +134,9 @@
 		"organizationModes": "Mode Organisasi"
 	},
 	"addImages": "Tambahkan gambar ke pesan",
+	"medicalKnowledgeBaseLabel": "Basis Pengetahuan Medis",
+	"medicalKnowledgeBaseForceTag": "Paksa",
+	"medicalKnowledgeBasePrompt": "Paksa asisten menggunakan alat medical-kb-server saat merespons.",
 	"sendMessage": "Kirim pesan",
 	"stopTts": "Hentikan text-to-speech",
 	"typeMessage": "Ketik pesan...",

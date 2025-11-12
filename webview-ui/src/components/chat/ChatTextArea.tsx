@@ -55,6 +55,8 @@ import {
 } from "@/utils/slash-commands"
 // kilocode_change end
 
+import { MedicalKnowledgeToggle } from "./MedicalKnowledgeToggle"
+
 interface ChatTextAreaProps {
 	inputValue: string
 	setInputValue: (value: string) => void
@@ -70,6 +72,8 @@ interface ChatTextAreaProps {
 	mode: Mode
 	setMode: (value: Mode) => void
 	modeShortcutText: string
+	isMedicalKnowledgeForced?: boolean
+	onMedicalKnowledgeForcedChange?: (value: boolean) => void
 	// Edit mode props
 	isEditMode?: boolean
 	onCancel?: () => void
@@ -93,6 +97,8 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 			mode,
 			setMode,
 			modeShortcutText,
+			isMedicalKnowledgeForced: medicalKnowledgeForcedProp,
+			onMedicalKnowledgeForcedChange,
 			isEditMode = false,
 			onCancel,
 			sendMessageOnEnter = true,
@@ -246,6 +252,17 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 		}, [setInputValue, searchRequestId])
 
 		const [isDraggingOver, setIsDraggingOver] = useState(false)
+		const [isMedicalKnowledgeForcedInternal, setIsMedicalKnowledgeForcedInternal] = useState(false)
+		const isMedicalKnowledgeForced = medicalKnowledgeForcedProp ?? isMedicalKnowledgeForcedInternal
+		const handleSetMedicalKnowledgeForced = useCallback(
+			(value: boolean) => {
+				if (medicalKnowledgeForcedProp === undefined) {
+					setIsMedicalKnowledgeForcedInternal(value)
+				}
+				onMedicalKnowledgeForcedChange?.(value)
+			},
+			[medicalKnowledgeForcedProp, onMedicalKnowledgeForcedChange, setIsMedicalKnowledgeForcedInternal],
+		)
 		// kilocode_change start: pull slash commands from Cline
 		const [showSlashCommandsMenu, setShowSlashCommandsMenu] = useState(false)
 		const [selectedSlashCommandsIndex, setSelectedSlashCommandsIndex] = useState(0)
@@ -287,6 +304,14 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 				vscode.postMessage(message)
 			}
 		}, [selectedType, searchQuery])
+
+		const handleMedicalSelect = useCallback(() => {
+			handleSetMedicalKnowledgeForced(true)
+		}, [handleSetMedicalKnowledgeForced])
+
+		const handleMedicalDeselect = useCallback(() => {
+			handleSetMedicalKnowledgeForced(false)
+		}, [handleSetMedicalKnowledgeForced])
 
 		const handleEnhancePrompt = useCallback(() => {
 			const trimmedInput = inputValue.trim()
@@ -1630,6 +1655,12 @@ export const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 									pinnedApiConfigs={pinnedApiConfigs}
 									togglePinnedApiConfig={togglePinnedApiConfig}
 									selectApiConfigDisabled={selectApiConfigDisabled}
+								/>
+								<MedicalKnowledgeToggle
+									selected={isMedicalKnowledgeForced}
+									onSelect={handleMedicalSelect}
+									onDeselect={handleMedicalDeselect}
+									className="self-start ml-2"
 								/>
 								{/* kilocode_change: Display current model name next to API config selector */}
 								{currentModelDisplayName && (

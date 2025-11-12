@@ -126,6 +126,9 @@
 		"organizationModes": "Organisatiemodi"
 	},
 	"addImages": "Afbeeldingen toevoegen aan bericht",
+	"medicalKnowledgeBaseLabel": "Medische kennisbank",
+	"medicalKnowledgeBaseForceTag": "Forceren",
+	"medicalKnowledgeBasePrompt": "Dwing de assistent om bij het antwoorden de tool medical-kb-server te gebruiken.",
 	"sendMessage": "Bericht verzenden",
 	"stopTts": "Stop tekst-naar-spraak",
 	"typeMessage": "Typ een bericht...",

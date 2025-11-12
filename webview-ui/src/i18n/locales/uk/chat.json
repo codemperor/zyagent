@@ -137,6 +137,9 @@
 		"organizationModes": "Режими організації"
 	},
 	"addImages": "Додати зображення до повідомлення",
+	"medicalKnowledgeBaseLabel": "Медична база знань",
+	"medicalKnowledgeBaseForceTag": "Примусово",
+	"medicalKnowledgeBasePrompt": "Примусь асистента використовувати інструмент medical-kb-server під час відповіді.",
 	"sendMessage": "Надіслати повідомлення",
 	"stopTts": "Зупинити озвучування тексту",
 	"typeMessage": "Введи повідомлення...",

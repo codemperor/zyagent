@@ -250,7 +250,7 @@ describe("mergeExtensionState", () => {
 			cloudUserInfo: null,
 			organizationAllowList: { allowAll: true, providers: {} },
 			autoCondenseContext: true,
-			autoCondenseContextPercent: 100,
+			autoCondenseContextPercent: 85,
 			cloudIsAuthenticated: false,
 			sharingEnabled: false,
 			profileThresholds: {},

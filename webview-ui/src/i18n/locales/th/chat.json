@@ -137,6 +137,9 @@
 		"organizationModes": "โหมดขององค์กร"
 	},
 	"addImages": "เพิ่มรูปภาพในข้อความ",
+	"medicalKnowledgeBaseLabel": "คลังความรู้ทางการแพทย์",
+	"medicalKnowledgeBaseForceTag": "บังคับ",
+	"medicalKnowledgeBasePrompt": "บังคับให้ผู้ช่วยใช้เครื่องมือ medical-kb-server เมื่อให้คำตอบ",
 	"sendMessage": "ส่งข้อความ",
 	"stopTts": "หยุดการอ่านเสียง",
 	"typeMessage": "พิมพ์ข้อความ...",

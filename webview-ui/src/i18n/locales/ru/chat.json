@@ -126,6 +126,9 @@
 		"organizationModes": "Режимы организации"
 	},
 	"addImages": "Добавить изображения к сообщению",
+	"medicalKnowledgeBaseLabel": "Медицинская база знаний",
+	"medicalKnowledgeBaseForceTag": "Принудить",
+	"medicalKnowledgeBasePrompt": "Принудить ассистента использовать инструмент medical-kb-server при ответе.",
 	"sendMessage": "Отправить сообщение",
 	"stopTts": "Остановить синтез речи",
 	"typeMessage": "Введите сообщение...",

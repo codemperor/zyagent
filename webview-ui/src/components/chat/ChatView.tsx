@@ -189,6 +189,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 	const textAreaRef = useRef<HTMLTextAreaElement>(null)
 	const [sendingDisabled, setSendingDisabled] = useState(false)
 	const [selectedImages, setSelectedImages] = useState<string[]>([])
+	const [isMedicalKnowledgeForced, setIsMedicalKnowledgeForced] = useState(false)
 
 	// we need to hold on to the ask because useEffect > lastMessage will always let us know when an ask comes in and handle it, but by the time handleMessage is called, the last message might not be the ask anymore (it could be a say that followed)
 	const [clineAsk, setClineAsk] = useState<ClineAsk | undefined>(undefined)
@@ -620,6 +621,8 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 		disableAutoScrollRef.current = false
 	}, [])
 
+	const medicalPrompt = useMemo(() => t("chat:medicalKnowledgeBasePrompt"), [t])
+
 	/**
 	 * Handles sending messages to the extension
 	 * @param text - The message text to send
@@ -627,7 +630,19 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 	 */
 	const handleSendMessage = useCallback(
 		(text: string, images: string[]) => {
-			text = text.trim()
+			let messageText = text ?? ""
+
+			if (isMedicalKnowledgeForced) {
+				const trimmed = messageText.trimEnd()
+				const hasPromptAtEnd = trimmed.endsWith(medicalPrompt)
+				const separator = trimmed && !hasPromptAtEnd ? "\n\n" : ""
+				const baseText = hasPromptAtEnd ? trimmed : `${trimmed}${separator}${medicalPrompt}`
+				messageText = baseText.trim()
+			} else {
+				messageText = messageText.trim()
+			}
+
+			text = messageText
 
 			if (text || images.length > 0) {
 				if (sendingDisabled) {
@@ -686,7 +701,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 				handleChatReset()
 			}
 		},
-		[handleChatReset, markFollowUpAsAnswered, sendingDisabled], // messagesRef and clineAskRef are stable
+		[handleChatReset, markFollowUpAsAnswered, sendingDisabled, isMedicalKnowledgeForced, medicalPrompt], // messagesRef and clineAskRef are stable
 	)
 
 	const handleSetChatBoxMessage = useCallback(
@@ -2208,6 +2223,8 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 				mode={mode}
 				setMode={setMode}
 				modeShortcutText={modeShortcutText}
+				isMedicalKnowledgeForced={isMedicalKnowledgeForced}
+				onMedicalKnowledgeForcedChange={setIsMedicalKnowledgeForced}
 				sendMessageOnEnter={sendMessageOnEnter} // kilocode_change
 			/>
 			{/* kilocode_change: added settings toggle the profile and model selection */}
