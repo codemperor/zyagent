@@ -103,6 +103,7 @@ export type ProviderName =
 	| "io-intelligence"
 	| "roo"
 	| "vercel-ai-gateway"
+	| "minimax"
 	| "zyagent-gateway"
 
 // Provider Settings Entry for profile metadata
@@ -320,6 +321,10 @@ export interface ProviderSettings {
 	// Vercel AI Gateway
 	vercelAiGatewayApiKey?: string
 	vercelAiGatewayModelId?: string
+
+	// MiniMax AI
+	minimaxBaseUrl?: "https://api.minimax.io/anthropic" | "https://api.minimaxi.com/anthropic"
+	minimaxApiKey?: string
 
 	// Allow additional fields for extensibility
 	[key: string]: any

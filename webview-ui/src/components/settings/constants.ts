@@ -10,6 +10,8 @@ import {
 	// kilocode_change start
 	// geminiModels,
 	geminiCliModels,
+	minimaxModels,
+	syntheticModels,
 	// kilocode_change end
 	mistralModels,
 	openAiNativeModels,
@@ -22,7 +24,6 @@ import {
 	doubaoModels,
 	internationalZAiModels,
 	fireworksModels,
-	syntheticModels, // kilocode_change
 	rooModels,
 	featherlessModels,
 } from "@roo-code/types"
@@ -38,6 +39,8 @@ export const MODELS_BY_PROVIDER: Partial<Record<ProviderName, Record<string, Mod
 	// kilocode_change start
 	// gemini: geminiModels,
 	"gemini-cli": geminiCliModels,
+	synthetic: syntheticModels,
+	minimax: minimaxModels,
 	// kilocode_change end
 	mistral: mistralModels,
 	"openai-native": openAiNativeModels,
@@ -49,7 +52,6 @@ export const MODELS_BY_PROVIDER: Partial<Record<ProviderName, Record<string, Mod
 	sambanova: sambaNovaModels,
 	zai: internationalZAiModels,
 	fireworks: fireworksModels,
-	synthetic: syntheticModels, // kilocode_change
 	roo: rooModels,
 	featherless: featherlessModels,
 }
@@ -94,9 +96,12 @@ export const PROVIDERS = [
 	// { value: "fireworks", label: "Fireworks AI" },
 	// { value: "featherless", label: "Featherless AI" },
 	// { value: "io-intelligence", label: "IO Intelligence" },
+	// { value: "minimax", label: "MiniMax" },
 	// kilocode_change start
 	// { value: "roo", label: "Roo Code Cloud" },
 	// kilocode_change end
 	// { value: "vercel-ai-gateway", label: "Vercel AI Gateway" },
 	{ value: "zyagent-gateway", label: "Zyagent Gateway" },
 ].sort((a, b) => a.label.localeCompare(b.label))
+
+// PROVIDERS.unshift({ value: "kilocode", label: "Kilo Gateway" }) // kilocode_change
